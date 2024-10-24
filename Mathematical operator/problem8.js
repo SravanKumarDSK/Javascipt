@@ -7,7 +7,7 @@ let f=6;
 let g=7;
 
 let sum1=((a+b)*c);
-let sum2=(d+e+f+g);
+let sum2=d+e+f+g;
 
 if(sum1>sum2) {
     console.log(True);
