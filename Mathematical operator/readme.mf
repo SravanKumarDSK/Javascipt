@@ -1,0 +1,53 @@
+we can not override the static method in the class its related by a class not the object re definining it compile time execute static method  in the clas
+how can we call default method
+interface at a time yes interface name .static method name we can access the method
+we can not write non abstract method in the interface
+utility method and null check method  
+
+lambda expression 
+
+enable functional programming 
+
+variable declaration of string String="Karthik"
+
+Test t=()->{
+    system.out.println("display overridden);
+}
+
+java.util.function 
+
+consumer interface its only one abstarct method 
+we dont care abput abstract method name 
+
+consumer take generics 
+t1.accept();
+
+bi function two argument 
+if want to do boolean check then we will go with predicate interface
+if want to go with multiple argument then go with bi prediacte i dont want return type anything but needed something else then we will go with  function interface
+return something else apply() 
+i dont want to any argument but need something else then go with supplier interface 
+get()
+
+if have same signature means we have to change eveerytime so needed inside list we can create the any number of objects 
+we have to get as object reference
+
+intFunction()
+take as int value
+double function
+double is the premitive 
+longsupplier
+
+java.lang .thread
+
+runnable interface run() functional interface 
+if u want to create thread class object then we need to initialize the constructor need to pass runnable interface
+
+collection enhancement
+
+if want to display the content for loop and iterate needed
+foreach method taking consumer returing void 
+
+
+we are using the wrapper class we can use user defined object also
+u can not modify the object because it will get error concurrent modification exception 
