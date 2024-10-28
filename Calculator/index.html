@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          h1 {
+            text-align: center;
+            font-size: 60px;
+            color: teal;
+          }
+    
+          #calculator {
+            width: 400px;
+            box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+              0px 25px 20px -20px rgba(0, 0, 0, 0.45),
+              25px 0 20px -20px rgba(0, 0, 0, 0.45);
+            margin: auto;
+            padding: 40px;
+            border-radius: 30px;
+          }
+    
+          #display {
+            height: 80px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          }
+    
+          #keyboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap: 10px;
+            margin-top: 10px;
+          }
+          #keyboard > div {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+              0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 10px;
+          }
+    
+          #keyboard > div:hover {
+            background-color: teaL;
+            color: white;
+          }
+          .black {
+            background-color: black;
+            color: white;
+          }
+          .red {
+            background-color: red;
+            color: white;
+          }
+    
+          #display {
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>FLM Calculator</h1>
+        <section id="calculator">
+          <div id="display"></div>
+    
+          <div id="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div class="red">AC</div>
+    
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+          </div>
+        </section>
+      </body>
+    </html>
+    
+    <script>
+      let keys = document.querySelectorAll("#keyboard>div");
+      let bag = "";
+    
+      for (let i = 0; i < keys.length; i++) {
+        keys[i].addEventListener("click", myCalculator);
+      }
+    
+      function myCalculator() {
+        let targetNumber = event.target.innerText; //=
+    
+        if (targetNumber == "AC") {
+          bag = "";
+          document.querySelector("#display").innerText = bag;
+        } else if (targetNumber == "=") {
+          document.querySelector("#display").innerText = eval(bag);
+          // evaluate the string and return single calculated value.
+        } else {
+          bag = bag + targetNumber; //"" + 1-->"1"
+          //"1"+ "+" ==> "1+"
+          //"1+" + 2 --->"1+2"
+          document.querySelector("#display").innerText = bag;
+        }
+      }
+    </script>
+    
