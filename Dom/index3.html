@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1{
+            background-color: aquamarine;
+        }
+    </style>
 </head>
 <body>
     <input type="text" id="name" placeholder="enter name" value="">
-    <button onclick="submitFunction()">Submit</button>
-  <h1 id="out">show names here</h1>
+    <button id="btn" onclick="submitFunction()">Mark as Submit</button>
+  <h1 id="flm">Click on this button</h1>
 </body>
 </html>
 <script>
+    document.getElementById("flm").style.backgroundColor="pink";
     function submitFunction(){
-        let name=document.getElementById("name").value;
-        console.log(name);
-        document.getElementById("out").innerText=name;
+        // 
+        
+        document.getElementById("btn").style.backgroundColor="green";
+        document.getElementById("btn").innerText="completed";
+        document.getElementById("btn").style.color="white";
+        document.getElementById("btn").style.fontSize="40px";
     }
 </script>
