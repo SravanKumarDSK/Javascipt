@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+
+    <div id="container">
+    </div>
+</body>
+</html>
+<script>
+     var images = [
+    "https://cdn.pixabay.com/photo/2019/05/29/14/30/cinque-terre-4237666_1280.jpg",
+    "https://cdn.pixabay.com/photo/2022/01/28/21/10/honeybee-6975865_1280.jpg",
+    "https://cdn.pixabay.com/photo/2021/10/16/05/43/love-6713977_1280.jpg",
+    "https://cdn.pixabay.com/photo/2022/01/25/12/58/conifer-6966140_1280.jpg",
+  ];
+  let id;
+  function start(){  
+        let slideImage=document.createElement('img');
+        let i=0;
+        id=setInterval(function(){
+            if(i==images.length){
+                i=0;
+            }
+             slideImage.src=images[i++];
+             document.querySelector("#container").append(slideImage);
+        },2000);
+  }
+  function stop(){
+    document.querySelector("#container").innerText="";
+    clearInterval(id);
+  }
+</script>

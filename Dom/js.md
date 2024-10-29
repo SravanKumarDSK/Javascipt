@@ -174,6 +174,9 @@ setTimeout- it is given by browser
 it takes two arguments will be a function which we want to execute
 second arg is duration delay after whuch you want to execute this function after have consumed time then only come into the javascript you must be in seconds only 
 in js it will give to the web browser after two seconds it will give us output 
-setInterval-it will continuosly execute after 2000ms of time 
+setInterval-it will continuosly execute after 2000ms of time give us to number it will store into the variable
 fetch
 Local storage
+
+
+why we are getting error can not read properties and values because spelling mistakes here 
