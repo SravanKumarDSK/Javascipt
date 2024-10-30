@@ -180,3 +180,99 @@ Local storage
 
 
 why we are getting error can not read properties and values because spelling mistakes here 
+
+
+queue is first in first out 
+
+stack order
+queue order
+web api 
+
+
+first click on event loop then
+go to call stack
+then output give us 
+again setTimeout will call then it will go to task queue
+then go to logB then anonymous
+logD execute then go to Output D
+after time queue over then go to again task queue come to call stack again give us to output next element execute here anonymous into call stack and give us to output empty stack is here 
+
+
+data types:
+primituve  pass by value
+number
+boolean
+string
+null
+undefined
+
+non primitive  pass by reference to array will get memory allocation memory will never change here during adding moment
+
+let a=[10,20,30,40];
+let b=a;
+b[0]=21;
+console.log(a);
+
+point to the same address pass to the same address
+let str="str";
+let str2=str;
+str2[0]="1";
+console.log(str);
+get error- cannot assign to read only properties here targeting to exact the value 
+object 
+array
+function
+
+
+promises
+
+we dont know about what will happen to the browser that y overcome this problem promise is resolve here
+
+we call it object or method 
+
+
+javascript object this keeps tack of the eventual completion or failure of any asynchronous task.
+
+two properties
+
+state ,result
+
+state-pending
+rejected(failure)
+resolved (fulfilled==completed)
+
+promise can be created using promise contructor
+it will take two arguments 
+contructor
+
+new Promise(function(resolve,reject)){
+
+}
+
+handling promise
+2 methods promiseOutput.then.catch();--chaining 
+.then()
+.catch()
+
+in resolve state we can pass the then()
+
+microtask queue is keep track of promises 
+
+even then catch also have micro task queue 
+
+promise will handle the reject part 
+
+first priority of microtask queue
+after task queue execute 
+finally 
+promise all:
+to handle multiple promise together
+the promise will be resolved if all the promises inside it are resolved else it will be rejected 
+promise.allsettled
+promise.any
+promise.race
+promise.reject
+promise.resoleve
+call back hell-chaining
+
+which output is given to us we dont know that is call back hell
