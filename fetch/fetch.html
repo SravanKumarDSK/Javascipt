@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="#container"></div>
+</body>
+</html>
+<script>
+    async function dataFetching(){
+        try{
+            let response=await fetch("https://fakestoreapi.com/products");
+            let data=await response.json();//this is promise json to object
+            let container=document.querySelector("#container");
+            console.log(data);
+                data.map(function(element){
+                  let p=document.createElement("p");
+                      p.innerText=element.category;
+                      container.append(p);
+            });
+        }catch(error){
+            console.log(error);
+              }  
+            }
+             dataFetching();
+</script> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  async function dataFetching() {
+    try {
+      let response = await fetch("https://fakestoreapi.com/products");
+      let data = await response.json(); //promise ---> convert json data into object.
+
+      console.log(data); // array
+
+      //dom
+      let container = document.querySelector("#container");
+      data.map(function (element) {
+        let div = document.createElement("div");
+        let p = document.createElement("p");
+        p.innerText = element.title;
+
+        let image = document.createElement("img");
+        image.src = element.image;
+        div.append(p, image);
+        container.append(div);
+      });
+    } catch (error) {
+      alert(error);
+      console.log(error);
+    }
+  }
+  dataFetching();
+</script>
