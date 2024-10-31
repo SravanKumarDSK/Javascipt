@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./app.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
     <div id="app">
-        <div id="tables-section">
-            <h2>table</h2>
-           <input type="text" 
-           id="table-search" 
-           placeholder="search by table name"
-           onchange="filtertable()"/>
-           <div id="tables-container"></div>
-        </div>
-        <div id="menu-section">
-            <h2>Menu</h2>
-            <input type="text" 
-            id="menu-search" 
-            placeholder="search by item name or course name" 
-            onchange="filterMenu()"/>
-            <div id="menu-container"></div>
-        </div>
+      <!-- table section  -->
+      <div id="tables-section">
+        <h2>Table</h2>
+        <input
+          type="text"
+          id="table-search"
+          placeholder="search by table name"
+          onchange="filterTable()"
+        />
+        <div id="tables-container"></div>
+      </div>
+      <!-- menu section  -->
+      <div id="menu-section">
+        <h2>Menu</h2>
+        <input
+          type="text"
+          id="menu-search"
+          placeholder="search by item name or course name"
+          onchange="filterMenu()"
+        />
+        <div id="menu-container"></div>
+      </div>
     </div>
+
+    <!-- modal section for order details  -->
+
     <div id="order-modal" class="modal">
-        <div class="modal-content">
-            <span>&times;</span>
-            <div id="modal-body"></div>
-        </div>
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Order Details</h3>
+        <div id="modal-body"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
 <script src="./app.js"></script>
