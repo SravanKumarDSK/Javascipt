@@ -23,3 +23,61 @@
     </form>
 </body>
 </html>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+    } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+  
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    import {
+      getDatabase,
+      ref,
+      set,
+    } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwVgqOGnK94_mozu3YEWEXwpbGMcURZZI",
+      authDomain: "web-authentication-2e225.firebaseapp.com",
+      projectId: "web-authentication-2e225",
+      storageBucket: "web-authentication-2e225.appspot.com",
+      messagingSenderId: "318064869044",
+      appId: "1:318064869044:web:fe114d6ea60d63ff9ae1e1",
+    };
+  
+    // new registration code start ..............
+  
+    // for database methods
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  
+    document.getElementById("register").addEventListener("click", function () {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let userName = document.getElementById("name").value;
+  
+      const auth = getAuth(app);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+  
+          const db = getDatabase();
+          set(ref(db, "users/" + user.uid), {
+            password: password,
+            email: email,
+            name: name,
+          });
+          alert("registered successfully");
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+    });
+  </script>
