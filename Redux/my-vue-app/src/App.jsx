@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Center, Container, Grid, GridItem } from "@chakra-ui/react";
+import React from "react";
+import { WarningIcon, } from "@chakra-ui/icons";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Box>hello</Box>
+      <Center bg="tomato" h="100px" w="100%" color="white">
+        this is center
+      </Center>
+      <Container maxW="100%" p={2}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam,
+        molestiae.
+      </Container>
+      <WarningIcon w={8} h={8} color="red.500" />
 
-export default App
+      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+        <GridItem w="100%" h="10" bg="blue.500" />
+        <GridItem w="100%" h="10" bg="blue.500" />
+        <GridItem w="100%" h="10" bg="blue.500" />
+        <GridItem w="100%" h="10" bg="blue.500" />
+        <GridItem w="100%" h="10" bg="blue.500" />
+      </Grid>
+    </>
+  );
+};
+
+export default App;
+
